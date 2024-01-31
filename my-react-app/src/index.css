@@ -11,48 +11,78 @@ body {
   background-color: #f4f4f4;
 }
 
-/* Basic styling */
-form {
-  max-width: 31.25rem; /* 500px */
-  margin: 1.25rem auto;
-  padding: 1.25rem;
-  background-color: white;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+.form-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-form input[type="text"],
-form input[type="email"],
-form textarea {
+.form-header-image img {
   width: 100%;
-  padding: 0.625rem;
-  margin: 0.625rem 0;
-  border: 1px solid #ddd;
+  object-fit: cover;
+  height: 75vh; /* Crop to 3/4 of the viewport height */
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  background-color: #fafafa;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.form-row input {
+  flex-basis: 48%; /* Adjust as needed for spacing */
+}
+input,
+textarea {
+  background-color: #f4f4f4; /* Same as the app background */
+  color: #333; /* Dark color for text */
+  border: 1px solid #ddd; /* Light border */
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
   border-radius: 0.25rem;
-  box-sizing: border-box; /* Make sure padding doesn't affect the total width */
+  /* Other input and textarea styles */
+}
+input:focus,
+textarea:focus,
+input[type="checkbox"]:focus {
+  outline: 2px solid grey; /* Change 'grey' to any color you prefer */
+}
+.form-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-form textarea {
-  resize: vertical;
+.checkbox-container {
+  margin-bottom: 1rem;
 }
 
-form label {
-  display: block;
-  margin-top: 0.625rem;
+.submit-container {
+  display: flex;
+  justify-content: flex-end;
 }
-
-form button {
-  padding: 0.625rem 1.25rem;
-  background-color: #007bff;
+.submit-btn {
+  background-color: black;
   color: white;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  margin-top: 0.625rem;
+  border: none; /* Remove default border */
+  border-radius: 0.25rem; /* Rounded corners */
+  padding: 0.75rem 2.8rem; /* Larger size, adjust as needed */
+  font-size: 1rem; /* Adjust font size as needed */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-form button:hover {
-  background-color: #0056b3;
+.submit-btn:hover {
+  background-color: #333; /* Slightly lighter black on hover */
 }
 
 nav {
@@ -169,6 +199,26 @@ hero-container {
   font-size: 0.75rem; /* Adjust font size as needed */
   margin-bottom: 0.5rem; /* Space between items in a column */
   /* Add more styling as needed */
+}
+.details-container {
+  background-color: #fafafa; /* Slightly lighter than #f4f4f4 */
+  padding: 2rem;
+  border-radius: 0.5rem;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.data-box,
+.message-box {
+  background-color: #f4f4f4;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.data-item {
+  display: inline-block;
+  margin-right: 2rem; /* Space between items */
 }
 
 @media (max-width: 960px) {
