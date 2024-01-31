@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import FormPage from "./pages/FormPage";
 import DetailsPage from "./pages/DetailsPage";
@@ -10,9 +10,9 @@ function App() {
     <Router>
       <div>
         <nav>
-          <div>
+          <Link to="/">
             <ImageComponent src={logo} alt="logo" />
-          </div>
+          </Link>
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />

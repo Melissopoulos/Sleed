@@ -1,13 +1,188 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* index.css */
+
+html {
+  font-size: 16px; /* Base font size */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Basic styling */
+form {
+  max-width: 31.25rem; /* 500px */
+  margin: 1.25rem auto;
+  padding: 1.25rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 100%;
+  padding: 0.625rem;
+  margin: 0.625rem 0;
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  box-sizing: border-box; /* Make sure padding doesn't affect the total width */
+}
+
+form textarea {
+  resize: vertical;
+}
+
+form label {
+  display: block;
+  margin-top: 0.625rem;
+}
+
+form button {
+  padding: 0.625rem 1.25rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin-top: 0.625rem;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+nav {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+}
+nav img {
+  width: 6rem;
+  height: auto;
+}
+
+hero-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.hero-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.overlay-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.home-container {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-section,
+.right-section {
+  width: 50%;
+}
+
+.gallery-title {
+  text-align: center;
+  text-decoration: underline;
+}
+
+.gallery-images {
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-images img {
+  width: 40%;
+  margin: 0 1.2rem;
+  height: auto;
+}
+
+.image-with-button {
+  position: relative;
+}
+
+.image-with-button img {
+  width: 100%;
+  height: auto;
+}
+
+.image-with-button button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.full-width-images {
+  display: flex;
+  justify-content: center;
+}
+
+.full-width-images img {
+  width: 50%;
+  height: auto;
+}
+.info-container {
+  display: flex;
+  width: 100%;
+}
+
+.left-empty-space {
+  flex-basis: 50%;
+  /* Optionally, you can style this space (e.g., background color) */
+}
+
+.right-content {
+  flex-basis: 50%;
+  /* Add additional styling as needed */
+}
+
+.info-section {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+}
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 33%;
+}
+
+.info-column p {
+  color: black; /* Simple black letters */
+  font-size: 0.75rem; /* Adjust font size as needed */
+  margin-bottom: 0.5rem; /* Space between items in a column */
+  /* Add more styling as needed */
+}
+
+@media (max-width: 960px) {
+}
+
+@media (max-width: 375px) {
+  form {
+    padding: 0.625rem;
+  }
+
+  form input[type="text"],
+  form input[type="email"],
+  form textarea,
+  form button {
+    padding: 0.5rem;
+  }
 }

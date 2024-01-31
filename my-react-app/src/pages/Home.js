@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import ImageComponent from "../components/ImageComponent";
 import hero from "../images/hero.png";
-import photoGallery1 from "../images/photoGallery1.png";
-import photoGallery2 from "../images/photoGallery2.png";
+import photoGalleryFirst from "../images/photoGallery1.png";
+import photoGallerySecond from "../images/photoGallery2.png";
 import formImage from "../images/form.png";
-import picture1 from "../images/picture1.png";
-import picture2 from "../images/picture2.png";
+import pictureFirst from "../images/picture1.png";
+import pictureSecond from "../images/picture2.png";
 
 function Home() {
   const navigate = useNavigate();
@@ -14,24 +14,50 @@ function Home() {
     navigate("/form");
   };
   return (
-    <div className="Home">
-      <div>
+    <div>
+      <div className="hero-container">
         <ImageComponent src={hero} alt="hero" />
-        <button onClick={goToFormPage}>Complete Form</button>
+        <button className="overlay-button" onClick={goToFormPage}>
+          Complete Form
+        </button>
       </div>
-      <div>
-        <div>
-          <h1>photo gallery</h1>
-          <ImageComponent src={photoGallery1} alt="photoGallery1" />
-          <ImageComponent src={photoGallery2} alt="photoGallery2" />
+      <div className="home-container">
+        <div className="left-section">
+          <h2 className="gallery-title">Photo Gallery</h2>
+          <div className="gallery-images">
+            <ImageComponent src={photoGalleryFirst} alt="photoGalleryFirst" />
+            <ImageComponent src={photoGallerySecond} alt="photoGallerySecond" />
+          </div>
         </div>
-        <div>
-          <ImageComponent src={formImage} alt="formImage" />
+        <div className="right-section">
+          <div className="image-with-button">
+            <ImageComponent src={formImage} alt="formImage" />
+            <button onClick={goToFormPage}>Go to Form</button>
+          </div>
         </div>
       </div>
-      <div>
-        <ImageComponent src={picture1} alt="picture1" />
-        <ImageComponent src={picture2} alt="picture1" />
+      <div className="full-width-images">
+        <ImageComponent src={pictureFirst} alt="pictureFirst" />
+        <ImageComponent src={pictureSecond} alt="pictureSecond" />
+      </div>
+      <div className="info-container">
+        <div className="right-content">
+          <div className="info-section">
+            <div className="info-column">
+              <p>Orders</p>
+              <p>Way of Payment</p>
+            </div>
+            <div className="info-column">
+              <p>Contacts</p>
+              <p>Company Phone</p>
+            </div>
+            <div className="info-column">
+              <p>Additional Information 1</p>
+              <p>Additional Information 2</p>
+            </div>
+          </div>
+        </div>
+        <div className="left-empty-space"></div>
       </div>
     </div>
   );
