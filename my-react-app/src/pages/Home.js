@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ImageComponent from "../components/ImageComponent";
 import hero from "../images/hero.png";
@@ -9,17 +10,35 @@ import pictureSecond from "../images/picture2.png";
 
 function Home() {
   const navigate = useNavigate();
+  const [isHovered, setIsHovered] = useState(false);
 
   const goToFormPage = () => {
     navigate("/form");
   };
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   return (
     <div>
       <div className="hero-container">
         <ImageComponent src={hero} alt="hero" />
-        <button className="overlay-button" onClick={goToFormPage}>
-          Complete Form
-        </button>
+        <div className="blur-box">
+          <p>SEASON 2022</p>
+          <h2>Contact with us!</h2>
+          <button
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className={isHovered ? "small-button" : "overlay-button"}
+            onClick={goToFormPage}
+          >
+            {isHovered ? " Check everything here " : " Complete Form "}
+          </button>
+        </div>
       </div>
       <div className="home-container">
         <div className="left-section">
@@ -32,7 +51,14 @@ function Home() {
         <div className="right-section">
           <div className="image-with-button">
             <ImageComponent src={formImage} alt="formImage" />
-            <button onClick={goToFormPage}>Go to Form</button>
+            <button
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className={isHovered ? "small-button" : "complete-here-button"}
+              onClick={goToFormPage}
+            >
+              {isHovered ? " Check everything here " : " Go to Form "}
+            </button>
           </div>
         </div>
       </div>

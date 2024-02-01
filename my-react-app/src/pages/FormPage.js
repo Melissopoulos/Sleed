@@ -31,6 +31,7 @@ function FormPage() {
         <ImageComponent src={hero} alt="hero" />
       </div>
       <div className="form-container">
+        <h3>Complete Form</h3>
         <form onSubmit={handleSubmit}>
           <div className="form-row">
             <input

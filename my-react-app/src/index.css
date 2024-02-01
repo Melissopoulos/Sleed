@@ -16,19 +16,33 @@ body {
   flex-direction: column;
   align-items: center;
 }
+.form-header-image {
+  width: 100%;
+  height: 50vh; /* Adjust this value to control how much of the image is shown */
+  overflow: hidden;
+}
 
 .form-header-image img {
   width: 100%;
+  height: auto;
   object-fit: cover;
-  height: 75vh; /* Crop to 3/4 of the viewport height */
+  object-position: center; /* Ensure the image covers the entire container */
+  display: block;
 }
 
 .form-container {
   width: 100%;
   max-width: 600px; /* Adjust as needed */
   background-color: #fafafa;
-  padding: 1rem;
+  padding: 8rem 3rem;
   margin: 1rem 0;
+  margin-top: -5rem;
+}
+.form-container h3 {
+  text-align: center;
+  margin-top: -5rem;
+
+  /* Additional styling as needed */
 }
 
 .form-row {
@@ -55,6 +69,15 @@ input:focus,
 textarea:focus,
 input[type="checkbox"]:focus {
   outline: 2px solid grey; /* Change 'grey' to any color you prefer */
+}
+.textarea-container textarea {
+  width: 96%; /* Adjust the width as needed */
+  height: 5rem; /* Increase the height */
+  padding: 10px; /* Optional: for better text spacing */
+  border: 1px solid #ccc; /* Optional: for border */
+  border-radius: 4px; /* Optional: for rounded corners */
+  resize: vertical; /* Allows vertical resizing, remove if not needed */
+  /* Add more styles as needed */
 }
 .form-footer {
   display: flex;
@@ -107,13 +130,35 @@ hero-container {
   object-fit: cover;
 }
 
-.overlay-button {
+.blur-box {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  right: 1rem;
+  bottom: -15rem;
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Blurring effect */
+  padding: 1rem 20rem 1rem 1rem;
 }
 
+.overlay-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.small-button {
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 0.5rem;
+}
 .home-container {
   margin-top: 5rem;
   margin-bottom: 3rem;
@@ -150,10 +195,19 @@ hero-container {
   width: 100%;
   height: auto;
 }
+.complete-here-button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 0;
+}
 
 .image-with-button button {
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -202,7 +256,7 @@ hero-container {
 }
 .details-container {
   background-color: #fafafa; /* Slightly lighter than #f4f4f4 */
-  padding: 2rem;
+  padding: 10rem;
   border-radius: 0.5rem;
   margin: 1rem auto;
   text-align: center;
@@ -220,19 +274,68 @@ hero-container {
   display: inline-block;
   margin-right: 2rem; /* Space between items */
 }
+.details-page-container-btn {
+  position: relative;
+  /* Add other styles as needed, e.g., padding, max-width, etc. */
+}
+.go-back-btn {
+  position: absolute;
+  bottom: -2rem; /* Adjust as needed */
+  right: 1rem; /* Adjust as needed */
+  background-color: black;
+  color: white;
+  border: none; /* Remove default border */
+  border-radius: 0.25rem; /* Rounded corners */
+  padding: 0.75rem 2.8rem; /* Larger size, adjust as needed */
+  font-size: 1rem; /* Adjust font size as needed */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease;
+}
 
 @media (max-width: 960px) {
+  hero-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .blur-box {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blurring effect */
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  .form-header-image {
+    height: 50vh; /* Adjust the height for mobile devices */
+  }
+
+  .form-header-image img {
+    object-position: center; /* Adjust the focus point if needed */
+  }
 }
 
 @media (max-width: 375px) {
-  form {
-    padding: 0.625rem;
+  hero-container {
+    position: relative;
+    width: 100%;
+    height: auto;
   }
 
-  form input[type="text"],
-  form input[type="email"],
-  form textarea,
-  form button {
-    padding: 0.5rem;
+  .blur-box {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    background: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blurring effect */
+    padding: 1rem 1rem 1rem 1rem;
+  }
+  .form-header-image {
+    height: 50vh; /* Adjust the height for mobile devices */
+  }
+
+  .form-header-image img {
+    object-position: center; /* Adjust the focus point if needed */
   }
 }
